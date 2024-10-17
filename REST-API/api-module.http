@@ -1,0 +1,907 @@
+
+
+@apiDBRBANK = https://dbrbank.digital/
+
+@apiGENIUS = https://cleantech.geniusocean.net/wallet-laravel-10/
+
+### GET test
+
+GET {{apiDBRBANK}} HTTP/1.1
+
+### GET test
+
+GET {{apiDBRBANK}}hello/marcelo HTTP/1.1
+# ================= LOGIN ======================= #
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username": "user2@user.com",
+    "password": "123456"
+}
+
+###
+GET http://localhost:3000/test-auth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoidXNlcjJAdXNlci5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTYzMTAyODQ4OSwiZXhwIjoxNjMxMDI4NTQ5fQ.yBCRo-oXwLWPtQ9V552dsO4B-h0cJ1zJkXEGpUONYP8
+
+#https 
+# ================= USUARIO ======================= #
+# ================= USUARIO ======================= #
+
+############################################
+############################################
+
+ // module: /api/module
+ // signUp: /api/user/register
+ // signIn: /api/user/login
+ // dashboard: /api/user/dashboard
+ // 
+ // refreshToken: /api/user/refresh/token
+ // twoFaOtpVerification: /api/user/otp-submit
+ // user: /api/user/user-info
+ // updateProfile: /api/user/profile-settings
+ // resetPassword: /api/user/forgot-password
+ // verifyEmail: /api/user/forgot-password/verify-code
+ // resetPasswordSubmit: /api/user/reset-password
+ // changePassword: /api/user/change-password
+ // kycForm: /api/user/kyc-form-data
+ // kycFormSubmit: /api/user/kyc-form
+ // generateQr: /api/user/generate-qrcode
+ // settings: /api/user/settings
+
+############################################
+############################################
+### GET MODULE
+
+// @name findOne deldatabaseversion
+GET {{apiGENIUS}}api/module
+
+### GET MODULE
+
+// @name findOne deldatabaseversion
+GET {{apiDBRBANK}}api/module
+content-type: application/json
+Authorization: Bearer 
+
+{
+  "success": true,
+  "message": "Module Data",
+  "response": [
+    [
+      {
+        "id": 1,
+        "module": "transfer-money",
+        "status": "1",
+        "kyc": "1",
+        "created_at": null,
+        "updated_at": "2023-10-01T12:07:55.000000Z"
+      },
+      {
+        "id": 2,
+        "module": "request-money",
+        "status": "1",
+        "kyc": "0",
+        "created_at": null,
+        "updated_at": "2023-09-13T01:38:14.000000Z"
+      },
+      {
+        "id": 3,
+        "module": "exchange-money",
+        "status": "1",
+        "kyc": "0",
+        "created_at": null,
+        "updated_at": "2023-09-13T01:38:16.000000Z"
+      },
+      {
+        "id": 4,
+        "module": "make-payment",
+        "status": "1",
+        "kyc": "0",
+        "created_at": null,
+        "updated_at": "2022-01-19T23:41:19.000000Z"
+      },
+      {
+        "id": 5,
+        "module": "create-voucher",
+        "status": "1",
+        "kyc": "0",
+        "created_at": null,
+        "updated_at": "2022-02-06T01:39:38.000000Z"
+      },
+      {
+        "id": 6,
+        "module": "withdraw-money",
+        "status": "1",
+        "kyc": "0",
+        "created_at": null,
+        "updated_at": "2022-02-01T21:03:33.000000Z"
+      },
+      {
+        "id": 7,
+        "module": "create-invoice",
+        "status": "1",
+        "kyc": "0",
+        "created_at": null,
+        "updated_at": "2023-09-13T01:38:20.000000Z"
+      },
+      {
+        "id": 8,
+        "module": "make-escrow",
+        "status": "1",
+        "kyc": "0",
+        "created_at": null,
+        "updated_at": "2022-01-11T02:46:09.000000Z"
+      },
+      {
+        "id": 9,
+        "module": "deposit",
+        "status": "1",
+        "kyc": "0",
+        "created_at": null,
+        "updated_at": "2022-02-01T21:04:29.000000Z"
+      },
+      {
+        "id": 10,
+        "module": "cash-out",
+        "status": "1",
+        "kyc": "0",
+        "created_at": null,
+        "updated_at": "2022-05-21T23:43:46.000000Z"
+      }
+    ]
+  ]
+}
+############################################
+############################################
+ // AppConstant.name: name.text,
+ // AppConstant.email: email.text,
+ // AppConstant.dial_code: phoneController.value!.countryCode,
+ // AppConstant.phone: phoneController.value!.nsn,
+ // AppConstant.password: password.text,
+ // AppConstant.password_confirmation: password.text,
+ // AppConstant.address: address.text,
+ // AppConstant.country: country.text,
+############################################
+############################################
+### SIGNUP
+// @name register  signUp POST
+POST {{apiGENIUS}}api/user/register
+content-type: application/json
+
+{
+   "name": "Claudio Santos",
+   "email": "claudio@gmail.com",
+   "dial_code": "+55",
+   "phone": "11995009970",
+   "password": "123456",
+   "address": "calle 3",
+   "country": "Germany"
+}
+
+####
+ {
+   "success": true,
+   "message": "User registered successfully.",
+   "response": {
+     "token": "997|H1vfs4lUJJnLT8Ssz02JMqsroVlJ6YbMPBXgULv11c9a484d",
+     "user": {
+       "id": 107,
+       "name": "Marcelu Santos",
+       "email": "marcelu@gmail.com",
+       "phone": "+5511995009960",
+       "country": "Germany",
+       "city": null,
+       "zip": null,
+       "address": "calle 3",
+       "profile_photo": "https:\/\/cleantech.geniusocean.net\/wallet-laravel-10\/assets\/images\/default.png",
+       "email_verified": true,
+       "kyc_status": null,
+       "two_fa_status": null,
+       "two_fa": null,
+       "two_fa_code": null,
+       "status": null,
+       "kyc_reject_reason": null,
+       "created_at": "2024-10-01T02:40:14.000000Z",
+       "updated_at": "2024-10-01T02:40:14.000000Z"
+     }
+   }
+ }
+
+### CREATE
+// @name register  signUp POST
+POST {{apiDBRBANK}}api/user/register
+content-type: application/json
+
+{
+   "name": "Marcelu Santosss",
+   "email": "marcelussss@gmail.com",
+   "dial_code": "+55",
+   "phone": "11995009969",
+   "password": "123456",
+   "password_confirmation": "123456",
+   "address": "calle 3",
+   "country": "Germany"
+}
+
+#######
+
+{
+  "success": true,
+  "message": "User registered successfully.",
+  "response": {
+    "token": "116|vIpIOe6YtDacsS1XMoJZ3CxiTlZCUJd6jU5K2PJLeea7fea5",
+    "user": {
+      "id": 20,
+      "name": "Marcelu Santos",
+      "email": "marcelu@gmail.com",
+      "phone": "5511995009960",
+      "country": "Germany",
+      "city": null,
+      "zip": null,
+      "address": "calle 3",
+      "profile_photo": "https:\/\/dbrbank.digital\/assets\/images\/default.png",
+      "email_verified": true,
+      "kyc_status": null,
+      "two_fa_status": null,
+      "two_fa": null,
+      "two_fa_code": null,
+      "status": null,
+      "created_at": "2024-10-01T02:41:59.000000Z",
+      "updated_at": "2024-10-01T02:41:59.000000Z"
+    }
+  }
+}
+############################################
+############################################
+ // AppConstant.email: email.text,
+ // AppConstant.password: password.text,
+ ############################################
+############################################
+### LOGIN
+// @name register  signIn POST
+POST {{apiGENIUS}}api/user/login
+content-type: application/json
+Authorization: Bearer 
+
+{
+   "email": "marcelu@gmail.com",
+   "password": "123456"
+}
+
+
+// {
+//   "success": true,
+//   "message": "Login successful.",
+//   "response": {
+//     "token": "999|QUzKsgzhPjGbvtLoqYqX3nzUKjOsNoFjj9bx6iThccd90567",
+//     "user": {
+//       "id": 107,
+//       "name": "Marcelu Santos",
+//       "email": "marcelu@gmail.com",
+//       "phone": "+5511995009960",
+//       "country": "Germany",
+//       "city": null,
+//       "zip": null,
+//       "address": "calle 3",
+//       "profile_photo": "https:\/\/cleantech.geniusocean.net\/wallet-laravel-10\/assets\/images\/default.png",
+//       "email_verified": true,
+//       "kyc_status": "0",
+//       "two_fa_status": "0",
+//       "two_fa": "0",
+//       "two_fa_code": 269843,
+//       "status": "1",
+//       "kyc_reject_reason": null,
+//       "created_at": "2024-10-01T02:40:14.000000Z",
+//       "updated_at": "2024-10-01T02:53:02.000000Z"
+//     }
+//   }
+// }
+
+### CREATE
+// @name register  signUp POST
+POST {{apiDBRBANK}}api/user/login
+content-type: application/json
+Authorization: Bearer 
+
+{
+   "email": "marcelu@gmail.com",
+   "password": "12345679"
+}
+
+######
+{
+  "success": true,
+  "message": "Login successful.",
+  "response": {
+    "token": "117|2yJo0cKIZQ3K0AAEzihtUuaEADKjhR7Im6VDoH6H7fd9196d",
+    "user": {
+      "id": 20,
+      "name": "Marcelu Santos",
+      "email": "marcelu@gmail.com",
+      "phone": "5511995009960",
+      "country": "Germany",
+      "city": null,
+      "zip": null,
+      "address": "calle 3",
+      "profile_photo": "https:\/\/dbrbank.digital\/assets\/images\/default.png",
+      "email_verified": true,
+      "kyc_status": "0",
+      "two_fa_status": "0",
+      "two_fa": "0",
+      "two_fa_code": 775138,
+      "status": "1",
+      "created_at": "2024-10-01T02:41:59.000000Z",
+      "updated_at": "2024-10-01T02:53:59.000000Z"
+    }
+  }
+}
+
+### LOGIN
+// @name register  signIn POST
+POST {{apiGENIUS}}api/user/login
+content-type: application/json
+Authorization: Bearer 
+
+{
+   "email": "user@gmail.com",
+   "password": "12345679"
+}
+#####
+{
+  "success": true,
+  "message": "Login successful.",
+  "response": {
+    "token": "1000|30dn9ZsjOrX6eCdA7yz2vwFLPoLPS39rnZRSzGzb86c1c0bb",
+    "user": {
+      "id": 2,
+      "name": "Marcelu",
+      "email": "user@gmail.com",
+      "phone": "+595993547294",
+      "country": "Bangladesh",
+      "city": "Asuncion",
+      "zip": "0000",
+      "address": "Lafranconi 4685",
+      "profile_photo": "https:\/\/cleantech.geniusocean.net\/wallet-laravel-10\/assets\/images\/15270452101716532029.png",
+      "email_verified": true,
+      "kyc_status": "1",
+      "two_fa_status": "0",
+      "two_fa": "0",
+      "two_fa_code": 417111,
+      "status": "1",
+      "kyc_reject_reason": "test",
+      "created_at": "2023-09-25T16:53:55.000000Z",
+      "updated_at": "2024-10-01T02:58:02.000000Z"
+    }
+  }
+}
+
+### LOGIN
+// @name register  signIn POST
+POST {{apiDBRBANK}}api/user/login
+content-type: application/json
+Authorization: Bearer 
+
+
+{
+   "email": "user@gmail.com",
+   "password": "123456"
+}
+
+###
+{
+  "success": true,
+  "message": "Login successful.",
+  "response": {
+    "token": "118|MiCNo8KlifgO8nk4c1hzrawkpirWPk0Iozv3UVel282ec8d3",
+    "user": {
+      "id": 2,
+      "name": "Marcelo Anjos",
+      "email": "user@gmail.com",
+      "phone": "++595 993547294",
+      "country": "Asuncion",
+      "city": "dhaka",
+      "zip": "1230",
+      "address": "Uttara",
+      "profile_photo": "https:\/\/dbrbank.digital\/assets\/images\/18335353941697632725.jpg",
+      "email_verified": true,
+      "kyc_status": "1",
+      "two_fa_status": "0",
+      "two_fa": "0",
+      "two_fa_code": 889123,
+      "status": "1",
+      "created_at": "2023-09-25T19:53:55.000000Z",
+      "updated_at": "2024-10-01T02:59:21.000000Z"
+    }
+  }
+}
+############################################
+############################################
+// dashboard: /api/user/dashboard
+//dashboard: /api/user/dashboard
+############################################
+############################################
+### GET DASHBOARD
+
+// @name findOne deldatabaseversion
+GET {{apiGENIUS}}api/user/dashboard
+Authorization: Bearer 1031|fUzMzqU2qgdM7KHymzw4tukb5SVZzUkryOyVDfWnc95e0b33
+### GET MODULE
+
+{
+  "success": true,
+  "message": "success",
+  "response": {
+    "wallets": [
+      {
+        "id": 228,
+        "user_id": "107",
+        "user_type": "1",
+        "currency_id": "4",
+        "balance": "0.0000000000",
+        "created_at": "2024-10-01T02:40:15.000000Z",
+        "updated_at": "2024-10-01T02:40:15.000000Z",
+        "currency": {
+          "id": 4,
+          "default": "0",
+          "symbol": "\u20ac",
+          "code": "EUR",
+          "curr_name": "European Currency",
+          "type": "1",
+          "status": "1",
+          "rate": "0.8790350000",
+          "created_at": "2021-12-19T21:12:58.000000Z",
+          "updated_at": "2022-02-15T20:02:35.000000Z"
+        }
+      }
+    ],
+    "transactions": [],
+    "totalTransferMoney": 0,
+    "totalExchange": 0,
+    "totalDeposit": 0,
+    "totalWithdraw": 0
+  }
+}
+###
+// @name findOne deldatabaseversion
+GET {{apiDBRBANK}}api/user/dashboard
+content-type: application/json
+Authorization: Bearer 120|AHy2B8FHNW2ZR43h3pMwoUnA6jZuXuOJFeDJApx728812143
+
+###
+
+{
+  "success": true,
+  "message": "success",
+  "response": {
+    "wallets": [
+      {
+        "id": 65,
+        "user_id": "20",
+        "user_type": "1",
+        "currency_id": "4",
+        "balance": "0.0000000000",
+        "created_at": "2024-10-01T02:41:59.000000Z",
+        "updated_at": "2024-10-01T02:41:59.000000Z",
+        "currency": {
+          "id": 4,
+          "default": "0",
+          "symbol": "\u20ac",
+          "code": "EUR",
+          "curr_name": "European Currency",
+          "type": "1",
+          "status": "1",
+          "rate": "0.8790350000",
+          "created_at": "2021-12-20T01:12:58.000000Z",
+          "updated_at": "2022-02-16T00:02:35.000000Z"
+        }
+      }
+    ],
+    "transactions": [],
+    "totalTransferMoney": 0,
+    "totalExchange": 0,
+    "totalDeposit": 0,
+    "totalWithdraw": 0
+  }
+}
+
+############################################
+############################################
+
+// @name findOne deldatabaseversion
+GET {{apiDBRBANK}}api/country-list
+content-type: application/json
+Authorization: Bearer 
+
+###################################
+
+### DASHBOARD RESPONSE
+
+{
+  "success": true,
+  "message": "success",
+  "response": {
+    "wallets": [
+      {
+        "id": 7,
+        "user_id": "2",
+        "user_type": "1",
+        "currency_id": "6",
+        "balance": "68903.9503000000",
+        "created_at": "2023-09-25T16:53:56.000000Z",
+        "updated_at": "2024-08-27T14:25:08.000000Z",
+        "currency": {
+          "id": 6,
+          "default": "0",
+          "symbol": "\u09f3",
+          "code": "BDT",
+          "curr_name": "Bangladeshi Taka",
+          "type": "1",
+          "status": "1",
+          "rate": "85.9261900000",
+          "created_at": "2021-12-20T17:48:53.000000Z",
+          "updated_at": "2022-02-15T20:02:35.000000Z"
+        }
+      },
+      {
+        "id": 8,
+        "user_id": "2",
+        "user_type": "1",
+        "currency_id": "1",
+        "balance": "35622.7390890000",
+        "created_at": "2023-09-25T18:55:57.000000Z",
+        "updated_at": "2024-09-23T19:45:41.000000Z",
+        "currency": {
+          "id": 1,
+          "default": "1",
+          "symbol": "$",
+          "code": "USD",
+          "curr_name": "United State Dollar",
+          "type": "1",
+          "status": "1",
+          "rate": "1.0000000000",
+          "created_at": "2021-12-19T21:12:58.000000Z",
+          "updated_at": "2022-02-15T20:02:37.000000Z"
+        }
+      },
+      {
+        "id": 9,
+        "user_id": "2",
+        "user_type": "1",
+        "currency_id": "10",
+        "balance": "102158.1761655800",
+        "created_at": "2023-10-01T06:28:07.000000Z",
+        "updated_at": "2024-09-23T19:45:41.000000Z",
+        "currency": {
+          "id": 10,
+          "default": "0",
+          "symbol": "\u20b9",
+          "code": "INR",
+          "curr_name": "Indian Rupee",
+          "type": "1",
+          "status": "1",
+          "rate": "75.0096000000",
+          "created_at": "2022-01-25T19:28:23.000000Z",
+          "updated_at": "2022-02-15T20:02:35.000000Z"
+        }
+      },
+      {
+        "id": 13,
+        "user_id": "2",
+        "user_type": "1",
+        "currency_id": "13",
+        "balance": "3328619.8891300000",
+        "created_at": "2023-10-02T06:47:26.000000Z",
+        "updated_at": "2024-08-21T21:43:18.000000Z",
+        "currency": {
+          "id": 13,
+          "default": "0",
+          "symbol": "\u20a6",
+          "code": "NGN",
+          "curr_name": "Nigerian naira",
+          "type": "1",
+          "status": "1",
+          "rate": "415.7594650000",
+          "created_at": "2022-02-05T22:41:35.000000Z",
+          "updated_at": "2022-02-15T20:02:35.000000Z"
+        }
+      },
+      {
+        "id": 20,
+        "user_id": "2",
+        "user_type": "1",
+        "currency_id": "4",
+        "balance": "23556.7430308310",
+        "created_at": "2023-10-05T04:09:18.000000Z",
+        "updated_at": "2024-09-06T05:32:06.000000Z",
+        "currency": {
+          "id": 4,
+          "default": "0",
+          "symbol": "\u20ac",
+          "code": "EUR",
+          "curr_name": "European Currency",
+          "type": "1",
+          "status": "1",
+          "rate": "0.8790350000",
+          "created_at": "2021-12-19T21:12:58.000000Z",
+          "updated_at": "2022-02-15T20:02:35.000000Z"
+        }
+      },
+      {
+        "id": 25,
+        "user_id": "2",
+        "user_type": "1",
+        "currency_id": "9",
+        "balance": "0.2870689900",
+        "created_at": "2023-10-05T12:53:34.000000Z",
+        "updated_at": "2024-07-17T07:51:42.000000Z",
+        "currency": {
+          "id": 9,
+          "default": "0",
+          "symbol": "\u20bf",
+          "code": "BTC",
+          "curr_name": "Bitcoin",
+          "type": "2",
+          "status": "1",
+          "rate": "0.0000225947",
+          "created_at": "2021-12-20T17:48:53.000000Z",
+          "updated_at": "2022-02-15T20:02:36.000000Z"
+        }
+      },
+      {
+        "id": 147,
+        "user_id": "2",
+        "user_type": "1",
+        "currency_id": "5",
+        "balance": "4132.6107215930",
+        "created_at": "2024-01-27T13:02:38.000000Z",
+        "updated_at": "2024-07-17T07:52:23.000000Z",
+        "currency": {
+          "id": 5,
+          "default": "0",
+          "symbol": "\u00a3",
+          "code": "GBP",
+          "curr_name": "Greate British Pound",
+          "type": "1",
+          "status": "1",
+          "rate": "0.7376150000",
+          "created_at": "2021-12-20T17:45:51.000000Z",
+          "updated_at": "2022-02-15T20:02:35.000000Z"
+        }
+      }
+    ],
+    "transactions": [
+      {
+        "id": 675,
+        "trnx": "TZQMHR842NPS",
+        "user_id": "2",
+        "user_type": "1",
+        "currency_id": "10",
+        "wallet_id": null,
+        "charge": "0.0000000000",
+        "amount": "75009.6000000000",
+        "remark": "money_exchange",
+        "type": "+",
+        "details": "Exchanged money from USD to INR",
+        "invoice_num": null,
+        "created_at": "2024-09-23T19:45:41.000000Z",
+        "updated_at": "2024-09-23T19:45:41.000000Z",
+        "currency": {
+          "id": 10,
+          "default": "0",
+          "symbol": "\u20b9",
+          "code": "INR",
+          "curr_name": "Indian Rupee",
+          "type": "1",
+          "status": "1",
+          "rate": "75.0096000000",
+          "created_at": "2022-01-25T19:28:23.000000Z",
+          "updated_at": "2022-02-15T20:02:35.000000Z"
+        }
+      },
+      {
+        "id": 674,
+        "trnx": "TZQMHR842NPS",
+        "user_id": "2",
+        "user_type": "1",
+        "currency_id": "1",
+        "wallet_id": null,
+        "charge": "12.0000000000",
+        "amount": "1000.0000000000",
+        "remark": "money_exchange",
+        "type": "-",
+        "details": "Exchanged money from USD to INR",
+        "invoice_num": null,
+        "created_at": "2024-09-23T19:45:41.000000Z",
+        "updated_at": "2024-09-23T19:45:41.000000Z",
+        "currency": {
+          "id": 1,
+          "default": "1",
+          "symbol": "$",
+          "code": "USD",
+          "curr_name": "United State Dollar",
+          "type": "1",
+          "status": "1",
+          "rate": "1.0000000000",
+          "created_at": "2021-12-19T21:12:58.000000Z",
+          "updated_at": "2022-02-15T20:02:37.000000Z"
+        }
+      },
+      {
+        "id": 673,
+        "trnx": "DG7E6KXZ8T6W",
+        "user_id": "2",
+        "user_type": "1",
+        "currency_id": "10",
+        "wallet_id": "9",
+        "charge": "0.0000000000",
+        "amount": "100.0000000000",
+        "remark": "deposit",
+        "type": "+",
+        "details": "Deposit balance to wallet : INR",
+        "invoice_num": null,
+        "created_at": "2024-09-16T15:42:14.000000Z",
+        "updated_at": "2024-09-16T15:42:14.000000Z",
+        "currency": {
+          "id": 10,
+          "default": "0",
+          "symbol": "\u20b9",
+          "code": "INR",
+          "curr_name": "Indian Rupee",
+          "type": "1",
+          "status": "1",
+          "rate": "75.0096000000",
+          "created_at": "2022-01-25T19:28:23.000000Z",
+          "updated_at": "2022-02-15T20:02:35.000000Z"
+        }
+      },
+      {
+        "id": 671,
+        "trnx": "QALDYAQZA7RD",
+        "user_id": "2",
+        "user_type": "1",
+        "currency_id": "1",
+        "wallet_id": null,
+        "charge": "238.6500000000",
+        "amount": "23665.0000000000",
+        "remark": "money_exchange",
+        "type": "-",
+        "details": "Exchanged money from USD to EUR",
+        "invoice_num": null,
+        "created_at": "2024-09-06T05:32:06.000000Z",
+        "updated_at": "2024-09-06T05:32:06.000000Z",
+        "currency": {
+          "id": 1,
+          "default": "1",
+          "symbol": "$",
+          "code": "USD",
+          "curr_name": "United State Dollar",
+          "type": "1",
+          "status": "1",
+          "rate": "1.0000000000",
+          "created_at": "2021-12-19T21:12:58.000000Z",
+          "updated_at": "2022-02-15T20:02:37.000000Z"
+        }
+      },
+      {
+        "id": 672,
+        "trnx": "QALDYAQZA7RD",
+        "user_id": "2",
+        "user_type": "1",
+        "currency_id": "4",
+        "wallet_id": null,
+        "charge": "0.0000000000",
+        "amount": "20802.3632750000",
+        "remark": "money_exchange",
+        "type": "+",
+        "details": "Exchanged money from USD to EUR",
+        "invoice_num": null,
+        "created_at": "2024-09-06T05:32:06.000000Z",
+        "updated_at": "2024-09-06T05:32:06.000000Z",
+        "currency": {
+          "id": 4,
+          "default": "0",
+          "symbol": "\u20ac",
+          "code": "EUR",
+          "curr_name": "European Currency",
+          "type": "1",
+          "status": "1",
+          "rate": "0.8790350000",
+          "created_at": "2021-12-19T21:12:58.000000Z",
+          "updated_at": "2022-02-15T20:02:35.000000Z"
+        }
+      },
+      {
+        "id": 670,
+        "trnx": "ZO5UVWL9BYHW",
+        "user_id": "2",
+        "user_type": "1",
+        "currency_id": "4",
+        "wallet_id": null,
+        "charge": "0.0000000000",
+        "amount": "1.0230117267",
+        "remark": "money_exchange",
+        "type": "+",
+        "details": "Exchanged money from BDT to EUR",
+        "invoice_num": null,
+        "created_at": "2024-08-27T14:25:08.000000Z",
+        "updated_at": "2024-08-27T14:25:08.000000Z",
+        "currency": {
+          "id": 4,
+          "default": "0",
+          "symbol": "\u20ac",
+          "code": "EUR",
+          "curr_name": "European Currency",
+          "type": "1",
+          "status": "1",
+          "rate": "0.8790350000",
+          "created_at": "2021-12-19T21:12:58.000000Z",
+          "updated_at": "2022-02-15T20:02:35.000000Z"
+        }
+      },
+      {
+        "id": 669,
+        "trnx": "ZO5UVWL9BYHW",
+        "user_id": "2",
+        "user_type": "1",
+        "currency_id": "6",
+        "wallet_id": null,
+        "charge": "172.8523800000",
+        "amount": "100.0000000000",
+        "remark": "money_exchange",
+        "type": "-",
+        "details": "Exchanged money from BDT to EUR",
+        "invoice_num": null,
+        "created_at": "2024-08-27T14:25:08.000000Z",
+        "updated_at": "2024-08-27T14:25:08.000000Z",
+        "currency": {
+          "id": 6,
+          "default": "0",
+          "symbol": "\u09f3",
+          "code": "BDT",
+          "curr_name": "Bangladeshi Taka",
+          "type": "1",
+          "status": "1",
+          "rate": "85.9261900000",
+          "created_at": "2021-12-20T17:48:53.000000Z",
+          "updated_at": "2022-02-15T20:02:35.000000Z"
+        }
+      },
+      {
+        "id": 668,
+        "trnx": "DKCOG0IA9H2Q",
+        "user_id": "2",
+        "user_type": "1",
+        "currency_id": "13",
+        "wallet_id": null,
+        "charge": "0.0000000000",
+        "amount": "83151.8930000000",
+        "remark": "money_exchange",
+        "type": "+",
+        "details": "Exchanged money from USD to NGN",
+        "invoice_num": null,
+        "created_at": "2024-08-21T21:43:19.000000Z",
+        "updated_at": "2024-08-21T21:43:19.000000Z",
+        "currency": {
+          "id": 13,
+          "default": "0",
+          "symbol": "\u20a6",
+          "code": "NGN",
+          "curr_name": "Nigerian naira",
+          "type": "1",
+          "status": "1",
+          "rate": "415.7594650000",
+          "created_at": "2022-02-05T22:41:35.000000Z",
+          "updated_at": "2022-02-15T20:02:35.000000Z"
+        }
+      }
+    ],
+    "totalTransferMoney": 4118.327940502039,
+    "totalExchange": 113803.65940979624,
+    "totalDeposit": 142783.47646364773,
+    "totalWithdraw": 8862.525230433235
+  }
+}
+
+
+############################

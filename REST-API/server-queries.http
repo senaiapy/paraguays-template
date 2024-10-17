@@ -1,0 +1,248 @@
+@apiUrl = http://localhost:3333/api/v0/senaia
+
+# ================= FILM ======================= #
+
+### GET FILM
+
+GET http://brtv2021.top:8080/get.php?username=teste_m&password=1234321&type=m3u_plus&output=mpegts
+# ================= FILM ======================= #
+#EXTINF:-1 tvg-id="" tvg-name="STAR LIFE HD" tvg-logo="" group-title="CANAIS 1",STAR LIFE HD
+http://brtv2021.top:8080/teste_m/1234321/10227
+#EXTINF:-1 tvg-id="" tvg-name="MTV 00's HD" tvg-logo="http://brtv2021.top:8080/images/8a53e0a2194f6a8f607a710700a5647e.png" group-title="CANAIS 1",MTV 00's HD
+http://brtv2021.top:8080/teste_m/1234321/10228
+# ================= FILM ======================= #
+
+
+### GET test
+
+GET {{apiUrl}}/
+# ================= PRODUCTO ======================= #
+
+### GET all
+// @name products
+GET {{apiUrl}}/products
+################################################################################
+{
+    "_id": "618763795ea12cc56a6077f9",
+    "productName": "Netgear Cable Modem",
+    "productCode": "CM700",
+    "proddescription": "Netgear Cable Modem compatible with all cables",
+    "prodRating": 4,
+    "__v": 0
+},
+############################################
+############################################
+### GET one
+// @name product
+GET {{apiUrl}}/product
+content-type: application/json
+
+{
+  "id": "6187feb3ef17321110321eb3"
+}
+############################################
+############################################
+############################################
+############################################
+### GET ID
+// @name product
+GET {{apiUrl}}/product/id
+content-type: application/json
+
+{
+  "id": "6187feb3ef17321110321eb3"
+}
+############################################
+############################################
+### CREATE
+// @name product
+POST {{apiUrl}}/products
+content-type: application/json
+
+{
+            "productName": "Marcelo",
+            "productCode": "CM700",
+            "proddescription": "Netgear Cable Modem compatible with all cables",
+            "prodRating": 4.0
+}
+############################################
+{
+  "_id": "6187637b5ea12cc56a6077fb",
+  "productName": "Netgear Cable Modem",
+  "productCode": "CM700",
+  "proddescription": "Netgear Cable Modem compatible with all cables",
+  "prodRating": 4,
+  "__v": 0
+}
+############################################
+############################################
+### UPDATE
+// @name product
+PUT {{apiUrl}}/updateproduct
+content-type: application/json
+
+{
+            "id": "618763685ea12cc56a6077f7",
+            "productCode": "0000"
+          
+}
+############################################
+{
+  "_id": "6187637b5ea12cc56a6077fb",
+  "productName": "Netgear Cable Modem",
+  "productCode": "CM700",
+  "proddescription": "Netgear Cable Modem compatible with all cables",
+  "prodRating": 4,
+  "__v": 0
+}
+############################################
+############################################
+### UPDATE ID
+// @name product
+PUT {{apiUrl}}/updateproduct/id
+content-type: application/json
+
+{
+            "id": "6187feb3ef17321110321eb3",
+            "productCode": "1234"
+          
+}
+############################################
+{
+  "_id": "6187637b5ea12cc56a6077fb",
+  "productName": "Netgear Cable Modem",
+  "productCode": "CM700",
+  "proddescription": "Netgear Cable Modem compatible with all cables",
+  "prodRating": 4,
+  "__v": 0
+}
+############################################
+############################################
+### DELETE
+// @name product
+DELETE {{apiUrl}}/deleteproduct
+content-type: application/json
+
+{
+  "id": "61874a39a9e01b7b37a2a921"
+}
+############################################
+{
+  "_id": "6187637b5ea12cc56a6077fb",
+  "productName": "Netgear Cable Modem",
+  "productCode": "CM700",
+  "proddescription": "Netgear Cable Modem compatible with all cables",
+  "prodRating": 4,
+  "__v": 0
+}
+############################################
+### DELETE ID
+// @name product
+DELETE {{apiUrl}}/deleteproduct/id
+content-type: application/json
+
+{
+  "id": "61875eebd545e1b8d14270b8"
+}
+############################################
+############################################
+# ================= INVOICES ======================= #
+# ================= AUTH ======================= #
+
+### LOGIN
+POST {{apiUrl}}/auth/login
+content-type: application/json
+
+{
+  "email": "sample.email@address.pl",
+  "password": "wiezA123"
+}
+
+### REGISTER
+POST {{apiUrl}}/auth/register
+content-type: application/json
+
+{
+  "name": "Łukasz K.",
+  "email": "sample.email@address.pl",
+  "password": "wiezA123"
+}
+
+### LOGOUT
+POST {{apiUrl}}/auth/logout
+
+# ================= PARTNERS ======================= #
+
+### GET all
+@deletedPartners = 0
+// @name partners
+GET {{apiUrl}}/partners?withDeleted={{deletedPartners}}
+
+### GET one
+// @name partner
+GET {{apiUrl}}/partners/{{partners.response.body.$.[0].id}}
+
+### CREATE
+// @name partner
+POST {{apiUrl}}/partners
+content-type: application/json
+
+{
+  "name": "ABC Company",
+  "taxNumber": "78912311222",
+  "address": {
+    "street": "Some street",
+    "city": "Some city"
+  }
+}
+
+### UPDATE
+// @name partner
+PUT {{apiUrl}}/partners/{{partners.response.body.$.[0].id}}
+content-type: application/json
+
+{
+  "name": "ABC Company {{$randomInt 1 20}}",
+  "taxNumber": "78912311221"
+}
+
+### DELETE
+DELETE {{apiUrl}}/partners/{{partner.response.body.$.id}}
+
+# ================= INVOICES ======================= #
+
+### GET all
+@deletedInvoices = 1
+// @name invoices
+GET {{apiUrl}}/invoices?withDeleted={{deletedInvoices}}
+
+### GET one
+// @name invoice
+GET {{apiUrl}}/invoices/{{invoices.response.body.$.[0].id}}
+
+### CREATE
+// @name invoice
+POST {{apiUrl}}/invoices
+content-type: application/json
+
+{
+  "number": "01/12/2019",
+  "invoiceDate": "{{$datetime iso8601}}",
+  "paymentDate": "{{$datetime iso8601 10 d}}",
+  "partnerId": "{{partner.response.body.$.id}}",
+  "invoiceItems": [
+    {
+      "name": "item 1",
+      "quantity": {{$randomInt 1 6}},
+      "unitPrice": "{{$randomInt 5 55}}.{{$randomInt 0 100}}"
+    },
+    {
+      "name": "item 2",
+      "quantity": {{$randomInt 2 10}},
+      "unitPrice": "{{$randomInt 1 35}}.{{$randomInt 0 100}}"
+    }
+  ]
+}
+
+### DELETE
+DELETE {{apiUrl}}/invoices/{{invoice.response.body.$.id}}

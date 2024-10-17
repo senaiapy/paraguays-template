@@ -1,0 +1,85 @@
+#!/bin/bash
+
+brew install \                                                  06:35:15 PM
+  wget \
+  exa \
+  git \
+  nvm \
+  yarn \
+  pnpm \
+  graphicsmagick \
+  commitizen \
+  cmatrix \
+  vips
+
+  git config --global user.name "senaiapy"
+  git config --global user.email "senaia.py@gmail.com"
+  echo "source $(brew --prefix nvm)/nvm.sh" >> ~/.zshrc
+  source ~/.zshrc
+  npm install -g yarn
+  npm install -g pnpm
+  brew install watchman
+   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   brew cask install iterm2
+   brew install zsh
+   sudo gem install cocoapods
+   brew tap AdoptOpenJDK/openjdk
+   brew install docker
+   brew install docker-compose
+   sudo softwareupdate --install-rosetta --agree-to-license
+sudo sh -c 'xcode-select -s /Applications/Xcode.app/Contents/Developer && xcodebuild -runFirstLaunch'
+sudo xcodebuild -license
+ xcodebuild -downloadPlatform iOS 
+ unzip ~/Downloads/flutter_macos_3.3.0-stable.zip
+ export PATH="$PATH:`pwd`/flutter/bin"
+ brew install ios-deploy
+ brew install --cask adoptopenjdk11  
+  brew install rbenv
+  rbenv install 2.7.6
+  rbenv global 2.7.6
+  gem install activesupport -v 7.1.4
+  brew tap leoafarias/fvm
+  brew install fvm
+  fvm install 3.13.6
+  fvm use 3.13.6
+  fvm flutter clean 
+  fvm flutter run
+npm install -g eas-cli
+eas login
+npm install --global expo-cli
+brew install fastlane
+brew install --cask zulu@17
+
+nano .zshrc
+####
+source /usr/local/opt/nvm/nvm.sh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+export PATH="$HOME/PROJECTS/flutter/bin:$PATH"
+
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/macbook/.dart-cli-completion/zsh-config.zsh ]] && . /Users/macbook$
+## [/Completion]
+
+export PATH="$HOME/.fastlane/bin:$PATH"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+###
+
+pnpm ios
+pnpm android
+
+#if have error
+cd ios
+pod install 

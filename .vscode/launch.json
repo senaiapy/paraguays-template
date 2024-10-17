@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch iOS App",
+      "program": "${workspaceFolder}/pnpm",
+      "args": [
+        "ios"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Android App",
+      "program": "${workspaceFolder}/pnpm",
+      "args": [
+        "android"
+      ]
+    }
+  ]
+}
