@@ -154,11 +154,7 @@ const Home: React.FC<{ navigation: any }> = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <ScrollView style={{ top: -40 }}>
-          <SubHeaderItem
-            title={translate('bank_screens.home_Your_Cards')}
-            subtitle={translate('bank_screens.home_View_All')}
-            onPress={() => router.push('/YourCard')}
-          />
+        
           <SubHeaderItem
             title={translate('bank_screens.home_Your_Savings')}
             subtitle={translate('bank_screens.home_View_All')}
